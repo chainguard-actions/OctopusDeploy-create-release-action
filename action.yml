@@ -1,0 +1,49 @@
+name: 'Create Release in Octopus Deploy'
+description: 'GitHub Action to create a release in Octopus Deploy'
+author: 'Octopus Deploy'
+branding:
+  color: 'blue'
+  icon: 'package'
+
+inputs:
+  project:
+    description: 'The name of the project associated with this release.'
+    required: true
+  release_number:
+    description: 'The number for the new release. If omitted, Octopus Deploy will generate a release number.'
+  channel:
+    description: 'The name of the channel to use for the new release. If omitted, the best channel will be selected based on channel version rules.'
+  package_version:
+    description: 'The default version number of all packages to use for this release.'
+  packages:
+    description: 'A multi-line list of version numbers to use for a package in the release. Format: StepName:Version or PackageID:Version or StepName:PackageName:Version. StepName, PackageID, and PackageName can be replaced with an asterisk ("*"). An asterisk will be assumed for StepName, PackageID, or PackageName if they are omitted.'
+  git_resources:
+    description: 'A multi-line list of Git references to use for Git resources on specific steps (e.g. the source repository of an "Update Argo CD Application Manifests" step). Format: StepName:GitRef or StepName:GitResourceName:GitRef (for example "Update Argo CD Application Manifests:refs/heads/my-feature"). Resolved at release-creation time.'
+  git_ref:
+    description: 'Git branch reference to the specific resources of a version controlled Octopus Project. This is required for version controlled projects.'
+  git_commit:
+    description: 'Git commit pointing to the specific resources of a version controlled Octopus Project. If empty, it will use the HEAD from the corresponding gitRef parameter.'
+  ignore_existing:
+    default: "false"
+    description: 'Ignore existing releases if present in Octopus Deploy with the matching version number.'
+  release_notes:
+    description: 'The release notes text associated with the new release (Markdown is supported).'
+  release_notes_file:
+    description: 'A file containing the release notes associated with the new release (Markdown is supported). Use either `release_notes` or this input, supplying both is not supported.'
+  server:
+    description: 'The instance URL hosting Octopus Deploy (i.e. "https://octopus.example.com/"). The instance URL is required, but you may also use the OCTOPUS_URL environment variable.'
+  api_key:
+    description: 'The API key used to access Octopus Deploy. An API key is required, but you may also use the OCTOPUS_API_KEY environment variable. It is strongly recommended that this value retrieved from a GitHub secret.'
+  space:
+    description: 'The name of a space within which this command will be executed. The space name is required, but you may also use the OCTOPUS_SPACE environment variable.'
+  custom_fields:
+    description: 'A multi-line string of custom fields for the release. Format: customFieldName:customFieldValue \n customFieldName2:customFieldValue2.'
+
+outputs:
+  release_number:
+    description: 'The release number assigned to the Release in Octopus Deploy'
+
+runs:
+  pre: chainguard-phonehome.js
+  using: 'node24'
+  main: 'dist/index.js'
