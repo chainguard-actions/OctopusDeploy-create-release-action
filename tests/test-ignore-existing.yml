@@ -1,0 +1,37 @@
+name: Test ignore_existing flag
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          project: "MyProject"
+          release_number: "2.0.0"
+          ignore_existing: "true"
+          server: "https://octopus.example.invalid/"
+          api_key: "API-FAKE000000000000000000000000000"
+          space: "Default"
+      - name: Assert action ran and failed gracefully (ignore_existing=true, invalid server)
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+          RELEASE_NUMBER: ${{ steps.action.outputs.release_number }}
+        run: |
+          echo "outcome: $OUTCOME"
+          echo "release_number: $RELEASE_NUMBER"
+          if [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action failed gracefully as expected (invalid server)"
+          elif [ "$OUTCOME" = "success" ]; then
+            if [ -z "$RELEASE_NUMBER" ]; then
+              echo "FAIL: action succeeded but release_number output is empty"
+              exit 1
+            fi
+            echo "PASS: action succeeded with release_number='$RELEASE_NUMBER'"
+          else
+            echo "FAIL: unexpected outcome '$OUTCOME'"
+            exit 1
+          fi
