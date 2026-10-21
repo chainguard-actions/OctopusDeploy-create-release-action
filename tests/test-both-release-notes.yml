@@ -1,0 +1,36 @@
+name: Test release_notes and release_notes_file conflict
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Create release notes file
+        run: echo "# Notes" > "$RUNNER_TEMP/notes.md"
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          project: MyProject
+          server: http://127.0.0.1:1
+          api_key: API-TESTKEY
+          space: Default
+          release_notes: "Some notes"
+          release_notes_file: ${{ runner.temp }}/notes.md
+      - name: Assert action failed validation
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+          RESULT: ${{ steps.action.outputs.release_number }}
+        run: |
+          echo "outcome: $OUTCOME"
+          echo "release_number: $RESULT"
+          if [ "$OUTCOME" != "failure" ]; then
+            echo "FAIL: expected failure when both release notes inputs are supplied"
+            exit 1
+          fi
+          if [ -n "$RESULT" ]; then
+            echo "FAIL: release_number should be empty"
+            exit 1
+          fi
+          echo "PASS"
