@@ -1,0 +1,378 @@
+# Changelog
+
+## [4.2.7](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.6...v4.2.7) (2026-10-26)
+
+
+### Bug Fixes
+
+* **deps:** bump undici from 6.29.0 to 6.29.1 ([#741](https://github.com/OctopusDeploy/create-release-action/issues/741)) ([1c07eec](https://github.com/OctopusDeploy/create-release-action/commit/1c07eec5c5574e30a5cdaa9fa4e495d0949ba896))
+
+## [4.2.6](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.5...v4.2.6) (2026-10-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump esbuild from 0.25.1 to 0.28.1 ([#693](https://github.com/OctopusDeploy/create-release-action/issues/693)) ([d8feda4](https://github.com/OctopusDeploy/create-release-action/commit/d8feda4d02a4422ff8b06627047eee49aefc267c))
+* **deps:** resolve npm audit advisories ([#739](https://github.com/OctopusDeploy/create-release-action/issues/739)) ([87734cd](https://github.com/OctopusDeploy/create-release-action/commit/87734cd9c53f0e705b1289a4f4f456a9bafffda4))
+
+## [4.2.5](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.4...v4.2.5) (2026-10-11)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump handlebars from 4.7.9 to 4.7.10 ([#735](https://github.com/OctopusDeploy/create-release-action/issues/735)) ([d664655](https://github.com/OctopusDeploy/create-release-action/commit/d6646557e8ed928e66d23b520e640e5eeebc6ab3))
+
+## [4.2.4](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.3...v4.2.4) (2026-10-04)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump js-yaml from 5.2.2 to 5.4.1 ([#731](https://github.com/OctopusDeploy/create-release-action/issues/731)) ([b42f832](https://github.com/OctopusDeploy/create-release-action/commit/b42f8325cf9899ad5949baa4ad277b59b2033ade))
+* **deps:** bump axios from 1.18.1 to 1.20.0 ([#733](https://github.com/OctopusDeploy/create-release-action/issues/733)) ([9dc9709](https://github.com/OctopusDeploy/create-release-action/commit/9dc970964665bb1d6ec89fd98c23198100195566))
+* **deps:** bump brace-expansion from 5.0.9 to 5.0.12 ([#734](https://github.com/OctopusDeploy/create-release-action/issues/734)) ([b6228f9](https://github.com/OctopusDeploy/create-release-action/commit/b6228f9d56a9eb9f69e1ba72fd58af76c297d9d0))
+* **deps:** bump undici from 6.28.0 to 6.29.0 ([#730](https://github.com/OctopusDeploy/create-release-action/issues/730)) ([cd9aa21](https://github.com/OctopusDeploy/create-release-action/commit/cd9aa21802fb6a7dc812325d627bd05ca1ac936c))
+
+## [4.2.3](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.2...v4.2.3) (2026-09-21)
+
+
+### Bug Fixes
+
+* **deps:** resolve npm audit advisories ([#728](https://github.com/OctopusDeploy/create-release-action/issues/728)) ([9906682](https://github.com/OctopusDeploy/create-release-action/commit/99066821991b0b06201aae883fd968f0b24db8e5))
+
+## [4.2.2](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.1...v4.2.2) (2026-09-04)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump browserslist from 4.28.1 to 4.28.8 ([#722](https://github.com/OctopusDeploy/create-release-action/issues/722)) ([c26a94b](https://github.com/OctopusDeploy/create-release-action/commit/c26a94bdc34dcf35075b42ece3fd36ec320f27de))
+* **deps:** bump brace-expansion override to resolve DoS bypass ([#720](https://github.com/OctopusDeploy/create-release-action/issues/720)) ([9704250](https://github.com/OctopusDeploy/create-release-action/commit/9704250be468679c1df59d6b6c38099eb2d1dc62))
+* **deps:** bump brace-expansion to resolve DoS advisory ([#714](https://github.com/OctopusDeploy/create-release-action/issues/714)) ([aa07aa3](https://github.com/OctopusDeploy/create-release-action/commit/aa07aa3333161f8cb8ca21c492fac06e72bf7817))
+* **deps:** resolve new brace-expansion and js-yaml advisories ([#718](https://github.com/OctopusDeploy/create-release-action/issues/718)) ([9abfaee](https://github.com/OctopusDeploy/create-release-action/commit/9abfaee723f28f8bbcb7446a35c78663f443da5c))
+* **deps:** resolve remaining npm audit advisories ([#716](https://github.com/OctopusDeploy/create-release-action/issues/716)) ([d6806a4](https://github.com/OctopusDeploy/create-release-action/commit/d6806a4284b05c08e82f4a9ffb7e0788018931ea))
+
+## [4.2.1](https://github.com/OctopusDeploy/create-release-action/compare/v4.2.0...v4.2.1) (2026-07-22)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump js-yaml from 4.1.1 to 4.3.0 ([#709](https://github.com/OctopusDeploy/create-release-action/issues/709)) ([c6d442c](https://github.com/OctopusDeploy/create-release-action/commit/c6d442c9339956febbac123b4b53fc70d090af27))
+* **deps:** bump @octopusdeploy/api-client to 3.11.5 ([#710](https://github.com/OctopusDeploy/create-release-action/issues/710)) ([3451b82](https://github.com/OctopusDeploy/create-release-action/commit/3451b828e2b067e9c75b08f5667ca19345c6dde7))
+* **deps:** bump @octopusdeploy/api-client to 3.11.6 ([#713](https://github.com/OctopusDeploy/create-release-action/issues/713)) ([d1cf773](https://github.com/OctopusDeploy/create-release-action/commit/d1cf773e1ed25749d443c8a6b88509047aa79812))
+* **deps:** bump axios from 1.17.0 to 1.18.1 ([#707](https://github.com/OctopusDeploy/create-release-action/issues/707)) ([8084525](https://github.com/OctopusDeploy/create-release-action/commit/80845253adeeebe9bef4fa9584f27fd033a4227d))
+* **deps:** update js-yaml to resolve DoS advisory ([#712](https://github.com/OctopusDeploy/create-release-action/issues/712)) ([cb3f7b2](https://github.com/OctopusDeploy/create-release-action/commit/cb3f7b2547cbbdea171f176501c6fc0f6a1ef359))
+
+## [4.2.0](https://github.com/OctopusDeploy/create-release-action/compare/v4.1.4...v4.2.0) (2026-07-20)
+
+
+### Features
+
+* add git_resources input for per-step Git resource refs (SF-2251) ([#705](https://github.com/OctopusDeploy/create-release-action/issues/705)) ([e565003](https://github.com/OctopusDeploy/create-release-action/commit/e56500323070f631d088629a0b15289332db7d6b))
+
+
+### Bug Fixes
+
+* **deps:** bump undici from 6.24.1 to 6.27.0 ([#701](https://github.com/OctopusDeploy/create-release-action/issues/701)) ([4ef5a94](https://github.com/OctopusDeploy/create-release-action/commit/4ef5a945342e1dd5b8dfbe1a215f8b1eb7544d77))
+* Simplify CaC example step in README ([#689](https://github.com/OctopusDeploy/create-release-action/issues/689)) ([074b146](https://github.com/OctopusDeploy/create-release-action/commit/074b146c8685db00ccac36852f26f2a63fed1040))
+
+## [4.1.4](https://github.com/OctopusDeploy/create-release-action/compare/v4.1.3...v4.1.4) (2026-06-08)
+
+
+### Bug Fixes
+
+* **deps:** bump tmp from 0.2.5 to 0.2.6 ([#685](https://github.com/OctopusDeploy/create-release-action/issues/685)) ([e17b9d0](https://github.com/OctopusDeploy/create-release-action/commit/e17b9d0ac90ddd40990bfa8b6afa651617042063))
+* patch transitive axios vulnerability via npm audit fix ([#680](https://github.com/OctopusDeploy/create-release-action/issues/680)) ([f9e708e](https://github.com/OctopusDeploy/create-release-action/commit/f9e708e71c364b855868dd3bc2fd7d44cb99a061))
+* update axios to v1.17.0 ([#690](https://github.com/OctopusDeploy/create-release-action/issues/690)) ([f0fbf09](https://github.com/OctopusDeploy/create-release-action/commit/f0fbf097e183ca26da7480bb28ee120adad5403d))
+
+## [4.1.3](https://github.com/OctopusDeploy/create-release-action/compare/v4.1.2...v4.1.3) (2026-04-13)
+
+
+### Bug Fixes
+
+* **deps:** bump axios from 1.13.5 to 1.15.0 ([#667](https://github.com/OctopusDeploy/create-release-action/issues/667)) ([56be13b](https://github.com/OctopusDeploy/create-release-action/commit/56be13bbd1d358770836256c4811030e754a6e5c))
+* Update path to config file in Renovate workflow ([#661](https://github.com/OctopusDeploy/create-release-action/issues/661)) ([7dba9ec](https://github.com/OctopusDeploy/create-release-action/commit/7dba9ec3ae141324b809055538435771263b73ab))
+
+## [4.1.2](https://github.com/OctopusDeploy/create-release-action/compare/v4.1.1...v4.1.2) (2026-03-25)
+
+
+### Bug Fixes
+
+* **deps:** upgrade @actions/core from v1 to v3 with ESM migration ([#652](https://github.com/OctopusDeploy/create-release-action/issues/652)) ([aee6395](https://github.com/OctopusDeploy/create-release-action/commit/aee6395b12926cf2f1d5f59034971f1ceb8919e4))
+
+## [4.1.1](https://github.com/OctopusDeploy/create-release-action/compare/v4.1.0...v4.1.1) (2026-03-13)
+
+
+### Bug Fixes
+
+* Colon splitting for custom fields ([#649](https://github.com/OctopusDeploy/create-release-action/issues/649)) ([bd61d14](https://github.com/OctopusDeploy/create-release-action/commit/bd61d14ce73900bf92e9aecb6bd714da9e964f11))
+
+## [4.1.0](https://github.com/OctopusDeploy/create-release-action/compare/v4.0.0...v4.1.0) (2026-02-27)
+
+
+### Features
+
+* Add workflow to check for conventional commit format PR title  ([#611](https://github.com/OctopusDeploy/create-release-action/issues/611)) ([2d92dba](https://github.com/OctopusDeploy/create-release-action/commit/2d92dba1227edd614174384772a1a5593a22831f))
+
+## [4.0.0](https://github.com/OctopusDeploy/create-release-action/compare/v3.3.0...v4.0.0) (2025-12-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update node to node 24 ([#606](https://github.com/OctopusDeploy/create-release-action/issues/606))
+
+### Features
+
+* Document use of custom fields ([#591](https://github.com/OctopusDeploy/create-release-action/issues/591)) ([c3b12c4](https://github.com/OctopusDeploy/create-release-action/commit/c3b12c4c0df42b378ab47b2c007bbc9dd85dc527))
+* Update node to node 24 ([#606](https://github.com/OctopusDeploy/create-release-action/issues/606)) ([9201b12](https://github.com/OctopusDeploy/create-release-action/commit/9201b12c4dcfb0fa8542fff9db4fd108a56b679c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency tmp to v0.2.4 [security] ([#576](https://github.com/OctopusDeploy/create-release-action/issues/576)) ([02c0ac0](https://github.com/OctopusDeploy/create-release-action/commit/02c0ac01aaa929e46d2d3df9e165e917441b628a))
+* **deps:** update dependency tmp to v0.2.5 ([#579](https://github.com/OctopusDeploy/create-release-action/issues/579)) ([4537c5c](https://github.com/OctopusDeploy/create-release-action/commit/4537c5c674267ad979a5de146b112aea614ab1cf))
+
+## [3.3.0](https://github.com/OctopusDeploy/create-release-action/compare/v3.2.4...v3.3.0) (2025-06-30)
+
+
+### Features
+
+* Add custom fields ([#563](https://github.com/OctopusDeploy/create-release-action/issues/563)) ([82e31ae](https://github.com/OctopusDeploy/create-release-action/commit/82e31aecde03dd2523bcd395f08fa392df3ca17d))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octopusdeploy/api-client to v3.6.0 ([#564](https://github.com/OctopusDeploy/create-release-action/issues/564)) ([2d972fc](https://github.com/OctopusDeploy/create-release-action/commit/2d972fc651a061e6b27ee4821c33d9a5c1b36ba1))
+
+## [3.2.4](https://github.com/OctopusDeploy/create-release-action/compare/v3.2.3...v3.2.4) (2025-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @actions/core to v1.11.1 ([2515245](https://github.com/OctopusDeploy/create-release-action/commit/2515245da71cda14d81765f466a851f75e3127ad))
+* **deps:** update dependency @octopusdeploy/api-client to v3.5.2 ([#538](https://github.com/OctopusDeploy/create-release-action/issues/538)) ([b2907b0](https://github.com/OctopusDeploy/create-release-action/commit/b2907b0ea8568edde48847b3fcf4be9d050694f8))
+
+## [3.2.3](https://github.com/OctopusDeploy/create-release-action/compare/v3.2.2...v3.2.3) (2025-02-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octopusdeploy/api-client to v3.5.1 ([183cf55](https://github.com/OctopusDeploy/create-release-action/commit/183cf55a3d58348be860144ab93bec7de2c3ef94))
+
+## [3.2.2](https://github.com/OctopusDeploy/create-release-action/compare/v3.2.1...v3.2.2) (2024-08-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tmp to v0.2.3 ([fe13cc6](https://github.com/OctopusDeploy/create-release-action/commit/fe13cc69c1c037cb7bb085981b152f5e35257e1f))
+
+## [3.2.1](https://github.com/OctopusDeploy/create-release-action/compare/v3.2.0...v3.2.1) (2024-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @actions/core to v1.10.1 ([991d8c8](https://github.com/OctopusDeploy/create-release-action/commit/991d8c87003711033a677597d51fde8b16759f35))
+
+## [3.2.0](https://github.com/OctopusDeploy/create-release-action/compare/v3.1.0...v3.2.0) (2023-12-14)
+
+
+### Features
+
+* Upgrade to node 20 ([#391](https://github.com/OctopusDeploy/create-release-action/issues/391)) ([ebb2d20](https://github.com/OctopusDeploy/create-release-action/commit/ebb2d2085f6a6155d8f3102e0e1fa8fbd8e2f07b))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([d748faa](https://github.com/OctopusDeploy/create-release-action/commit/d748faaf7303fd63d10a01ff47540d9d081e4493))
+
+## [3.1.0](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.5...v3.1.0) (2023-08-30)
+
+
+### Features
+
+* Adds support for authenticating with access token ([#385](https://github.com/OctopusDeploy/create-release-action/issues/385)) ([a28e03d](https://github.com/OctopusDeploy/create-release-action/commit/a28e03d98e4de1a7b5c424268cf5ae36c1166d82))
+
+## [3.0.5](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.4...v3.0.5) (2023-04-20)
+
+
+### Bug Fixes
+
+* incorrectly error when server version is checked ([cc3cf65](https://github.com/OctopusDeploy/create-release-action/commit/cc3cf6523203fe302422fa6be94a3e78d39a8580))
+
+## [3.0.4](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.3...v3.0.4) (2023-02-06)
+
+
+### Bug Fixes
+
+* Fixed a bug with the capability API checks ([#374](https://github.com/OctopusDeploy/create-release-action/issues/374)) ([ba5e15f](https://github.com/OctopusDeploy/create-release-action/commit/ba5e15f05a270dd2f45fb81b356f2d114fc00ab7))
+
+## [3.0.3](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.2...v3.0.3) (2023-01-31)
+
+
+### Bug Fixes
+
+* Updated client library to get better error messages capabilities and required Octopus version ([072c13b](https://github.com/OctopusDeploy/create-release-action/commit/072c13b5a0ddccc663a0c0d8b098229b40c65690))
+
+## [3.0.2](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.1...v3.0.2) (2022-12-23)
+
+
+### Bug Fixes
+
+* Added release notes file back in, as trying to pass large data through action outputs isn't practical ([#367](https://github.com/OctopusDeploy/create-release-action/issues/367)) ([f4b624a](https://github.com/OctopusDeploy/create-release-action/commit/f4b624abdcf20d8e9decf6d743936c4e7570b909))
+
+## [3.0.1](https://github.com/OctopusDeploy/create-release-action/compare/v3.0.0...v3.0.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* updated dependencies ([9085cc2](https://github.com/OctopusDeploy/create-release-action/commit/9085cc2391362d4bd67cfd97ab069d882df376a2))
+
+## [3.0.0](https://github.com/OctopusDeploy/create-release-action/compare/v2.1.0...v3.0.0) (2022-12-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update action to use the native API client
+
+### Features
+
+* Update action to use the native API client ([982b7d4](https://github.com/OctopusDeploy/create-release-action/commit/982b7d4ab80a7c5f43aa38a90c9092c2b72768e8))
+
+
+### Bug Fixes
+
+* updated dependencies ([c10ca9e](https://github.com/OctopusDeploy/create-release-action/commit/c10ca9e5a3d9e030bba775cd474c54bbe0aab4e9))
+
+## [2.1.0](https://github.com/OctopusDeploy/create-release-action/compare/v2.0.1...v2.1.0) (2022-11-03)
+
+
+### Features
+
+* bump dependencies ([6cdf8b5](https://github.com/OctopusDeploy/create-release-action/commit/6cdf8b5ae9cfe48342d45fbedfd55bf891d07b37))
+* Update runner dependencies to Node 16 ([0ab7db0](https://github.com/OctopusDeploy/create-release-action/commit/0ab7db0303530a67fef95f709fbbbe50d182426d))
+
+## [2.0.1](https://github.com/OctopusDeploy/create-release-action/compare/v2.0.0...v2.0.1) (2022-07-18)
+
+
+### Bug Fixes
+
+* Environment variables from the GitHub action context were not passed through to the underlying Octopus CLI ([d43577d](https://github.com/OctopusDeploy/create-release-action/commit/d43577d3aa0a92195c1b124a440e3e67eea3c2a7)), closes [#318](https://github.com/OctopusDeploy/create-release-action/issues/318)
+* StdError and the process exit code returned by the CLI are now shown in Github Action runs ([d43577d](https://github.com/OctopusDeploy/create-release-action/commit/d43577d3aa0a92195c1b124a440e3e67eea3c2a7))
+
+## [2.0.0](https://github.com/OctopusDeploy/create-release-action/compare/v1.2.0...v2.0.0) (2022-07-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* The action now has an output release_number, which returns the Release Number assigned by the Octopus server. You can use this for future steps in your workflow if you would like to do additional things with the release.
+* The action would previously ignore errors from the underlying Octopus CLI. These are now correctly reported through the action.
+* Release 2.0
+
+### Features
+
+* Release 2.0 ([e04cfc9](https://github.com/OctopusDeploy/create-release-action/commit/e04cfc9bfa1472677ae0c4809e08c7db306b277f))
+* The action now has an output release_number, which returns the Release Number assigned by the Octopus server. You can use this for future steps in your workflow if you would like to do additional things with the release. ([e04cfc9](https://github.com/OctopusDeploy/create-release-action/commit/e04cfc9bfa1472677ae0c4809e08c7db306b277f))
+* The action now supports loading some options from environment variables: OCTOPUS_HOST, OCTOPUS_API_KEY, OCTOPUS_PROXY, OCTOPUS_PROXY_USERNAME, OCTOPUS_PROXY_PASSWORD, OCTOPUS_SPACE. Action inputs remain supported. ([e04cfc9](https://github.com/OctopusDeploy/create-release-action/commit/e04cfc9bfa1472677ae0c4809e08c7db306b277f))
+
+
+### Bug Fixes
+
+* The action would previously ignore errors from the underlying Octopus CLI. These are now correctly reported through the action. ([e04cfc9](https://github.com/OctopusDeploy/create-release-action/commit/e04cfc9bfa1472677ae0c4809e08c7db306b277f))
+
+## [1.2.0](https://github.com/OctopusDeploy/create-release-action/compare/v1.1.4...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* added multiple input support for tenants, tenant tags, and variables ([#260](https://github.com/OctopusDeploy/create-release-action/issues/260)) ([04615c8](https://github.com/OctopusDeploy/create-release-action/commit/04615c8854f754c0275e372a8d1be800de4bf13b))
+
+## [1.1.4](https://github.com/OctopusDeploy/create-release-action/compare/v1.1.3...v1.1.4) (2022-06-28)
+
+
+### Features
+
+* Updated build pipeline ([#282](https://github.com/OctopusDeploy/create-release-action/issues/282)) ([80b6272](https://github.com/OctopusDeploy/create-release-action/commit/80b62723c789e9a7b4ca4b580f1b986540db0ce0))
+
+
+### Bug Fixes
+
+* updated README ([63d0581](https://github.com/OctopusDeploy/create-release-action/commit/63d0581c16acc09da66beaab126def241fccb78e))
+
+
+### Miscellaneous Chores
+
+* release 1.1.4 ([f2bcab1](https://github.com/OctopusDeploy/create-release-action/commit/f2bcab125425aedae05db3dffff986d3c07a5b15))
+
+### [1.1.3](https://github.com/OctopusDeploy/create-release-action/compare/v1.1.2...v1.1.3) (2022-05-04)
+
+
+### Bug Fixes
+
+* updated deprecation message to fix typo ([18bd3d3](https://github.com/OctopusDeploy/create-release-action/commit/18bd3d3ee699201cb48b0a154f1eee2f7ef021b6))
+* updated reference ([75d67a3](https://github.com/OctopusDeploy/create-release-action/commit/75d67a3d3f26a730ed3c00bbd75b17ec5b7fca65))
+
+### [1.1.2](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.1.1...v1.1.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* --guidedFailure flag set to 'false' is evaluated as boolean true ([789ffc8](https://www.github.com/OctopusDeploy/create-release-action/commit/789ffc8a64b20656d5d9e2b71a4db71bec9f2c35))
+
+### [1.1.1](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.1.0...v1.1.1) (2021-09-17)
+
+
+### Features
+
+* updated tests ([505b877](https://www.github.com/OctopusDeploy/create-release-action/commit/505b8771e1b92a30399bdb73937d0ff7dbda4463))
+
+
+### Bug Fixes
+
+* trimmed input from multiline inputs ([282dd50](https://www.github.com/OctopusDeploy/create-release-action/commit/282dd509d9e5d0831e966113b091d2453bc0d979))
+
+
+### Miscellaneous Chores
+
+* release 1.1.1 ([fcaee1a](https://www.github.com/OctopusDeploy/create-release-action/commit/fcaee1a7a1e3678e31f0ee0e882ebd778edc1b0a))
+
+## [1.1.0](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.0.6...v1.1.0) (2021-09-15)
+
+
+### Features
+
+* added support for packages input ([2bf1c08](https://www.github.com/OctopusDeploy/create-release-action/commit/2bf1c08fb09d805750cbf74a2a3ad836bbfb3f41))
+
+
+### Bug Fixes
+
+* updated error handling ([3a1aa24](https://www.github.com/OctopusDeploy/create-release-action/commit/3a1aa24196373d8f88fa3db7004286fd3d90a7ab))
+
+### [1.0.6](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.0.4...v1.0.6) (2021-08-12)
+
+
+### Bug Fixes
+
+* updated tests to return valid results ([3172be8](https://www.github.com/OctopusDeploy/create-release-action/commit/3172be8ee824441609c02b674b99276c33c39068))
+
+
+### Miscellaneous Chores
+
+* release 1.0.5 ([ab2c22b](https://www.github.com/OctopusDeploy/create-release-action/commit/ab2c22b1d7aa78dffe981b43b1db6e0fd623ae3c))
+* release 1.0.5 ([7bb274b](https://www.github.com/OctopusDeploy/create-release-action/commit/7bb274b32b00848e4013dd2a733f4e0cb24b000e))
+* release 1.0.6 ([b9e4096](https://www.github.com/OctopusDeploy/create-release-action/commit/b9e4096ba3d632846c338efa47e9a49a8d337400))
+
+### [1.0.4](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.0.3...v1.0.4) (2021-07-21)
+
+
+### Bug Fixes
+
+* updated input variables ([c38c573](https://www.github.com/OctopusDeploy/create-release-action/commit/c38c573ec27f92eda0576452f2a4e12c08552f35))
+
+### [1.0.3](https://www.github.com/OctopusDeploy/create-release-action/compare/v1.0.2...v1.0.3) (2021-07-16)
+
+
+### Bug Fixes
+
+* added tmp for tests ([969a126](https://www.github.com/OctopusDeploy/create-release-action/commit/969a12617ec16835a03bef2fcf7ff62ab1e8e4a0))
+* bumped dependencies ([f46273a](https://www.github.com/OctopusDeploy/create-release-action/commit/f46273ad93992e6ad816d8c80d2347f4fdc0a890))
+* bumped dependencies ([0ec53f9](https://www.github.com/OctopusDeploy/create-release-action/commit/0ec53f9960921f5eca2a7e108131dc47b22b9333))
+* updated tests ([3f36961](https://www.github.com/OctopusDeploy/create-release-action/commit/3f3696157f39e455a3b73393ed5122e44cce6932))
+* updated workflow order ([cbe8aa5](https://www.github.com/OctopusDeploy/create-release-action/commit/cbe8aa56beb2ab954eaf193a3199694ff77fefc9))

@@ -1,19 +1,139 @@
-# OctopusDeploy/create-release-action
+# create-release-action
 
-GitHub Action to create a release in Octopus Deploy
+<img alt= "" src="https://github.com/OctopusDeploy/create-release-action/raw/main/assets/github-actions-octopus.png" />
 
-Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/OctopusDeploy/create-release-action](https://github.com/OctopusDeploy/create-release-action).
+This is a GitHub Action to create a release in [Octopus Deploy](https://octopus.com/).
 
-## Versions
+> [!NOTE]
+> If you have used earlier versions of this action, as of **v3** of this action there is no longer a dependency to the Octopus CLI, so the installer action is no longer required in order to use this step.
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v4.2.1 | [`v4.2.1`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.1) | [`4bd7d59`](https://github.com/OctopusDeploy/create-release-action/commit/4bd7d595da7f803e467d41c32fa0b5dbb9f222dc) |
-| v4.2.2 | [`v4.2.2`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.2) | [`7e9e7d1`](https://github.com/OctopusDeploy/create-release-action/commit/7e9e7d1c07fc6b2bd6a805f221a51939464e74d6) |
-| v4.2.3 | [`v4.2.3`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.3) | [`4eaeba1`](https://github.com/OctopusDeploy/create-release-action/commit/4eaeba13bef87ec399ecac936e9f513758784694) |
-| v4.2.4 | [`v4.2.4`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.4) | [`4c7a44c`](https://github.com/OctopusDeploy/create-release-action/commit/4c7a44cddca3a7aa41d15a01417e648bb7db49ba) |
-| v4.2.5 | [`v4.2.5`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.5) | [`2fceebb`](https://github.com/OctopusDeploy/create-release-action/commit/2fceebb1d9cc8624d726a77e2faf93948de6741d) |
-| v4.2.6 | [`v4.2.6`](https://github.com/chainguard-actions/OctopusDeploy-create-release-action/tree/v4.2.6) | [`d01f523`](https://github.com/OctopusDeploy/create-release-action/commit/d01f523c3b9121a68f212f2f589fb00cb5709671) |
+> [!IMPORTANT]
+> As of **v3** of this action, Octopus Server version `2022.3.5512` or newer is required.
+
+## Releases in Octopus Deploy
+
+A release is a snapshot of the deployment process and the associated assets (packages, scripts, variables) as they existed when the release was created. The release is given a version number, and you can deploy that release as many times as you need to, even if parts of the deployment process have changed since the release was created (those changes will be included in future releases but not in this version).
+
+When you deploy the release, you are executing the deployment process with all the associated details, as they existed when the release was created.
+
+More information about releases in Octopus Deploy:
+
+- [Releases](https://octopus.com/docs/releases)
+
+## Migration Guide(s)
+
+Please refer to the [migration guide](migration-guide.md) if moving between major versions of this action.
+
+## Examples
+
+Incorporate the following actions in your workflow to create a release in Octopus Deploy using an API key, a target instance (i.e. `server`), and a project:
+
+```yml
+env:
+  OCTOPUS_API_KEY: ${{ secrets.API_KEY  }}
+  OCTOPUS_URL: ${{ secrets.OCTOPUS_URL }}
+  OCTOPUS_SPACE: 'Outer Space'
+steps:
+  # ...
+  - name: Create a release in Octopus Deploy 🐙
+    id: create_a_release_in_octopus_deploy
+    uses: OctopusDeploy/create-release-action@v4
+    with:
+      project: 'MyProject'
+```
+
+To use an version controlled Octopus project, add the `git_ref` and `git_commit` fields:
+
+```yml
+env:
+  OCTOPUS_API_KEY: ${{ secrets.API_KEY  }}
+  OCTOPUS_URL: ${{ secrets.OCTOPUS_URL }}
+  OCTOPUS_SPACE: 'Outer Space'
+steps:
+  # ...
+  - name: Create a release in Octopus Deploy 🐙
+    id: create_a_release_in_octopus_deploy  
+    uses: OctopusDeploy/create-release-action@v4
+    with:
+      project: 'MyProject'
+      git_ref: ${{ github.ref }}
+      git_commit: ${{ github.sha }}
+```
+
+To specify the version of a package referenced in a step to use in the release, add the `packages` field:
+
+```yml
+env:
+  OCTOPUS_API_KEY: ${{ secrets.API_KEY  }}
+  OCTOPUS_URL: ${{ secrets.OCTOPUS_URL }}
+  OCTOPUS_SPACE: 'Outer Space'
+steps:
+  # ...
+  - name: Create a release in Octopus Deploy 🐙
+    id: create_a_release_in_octopus_deploy  
+    uses: OctopusDeploy/create-release-action@v4
+    with:
+      project: 'MyProject'
+      packages: |
+        StepName:PackageReferenceName:Version
+        PackageID:Version
+```
+
+To target a specific Git reference for a step's Git resource (for example, the source repository of an **Update Argo CD Application Manifests** step) at release-creation time, add the `git_resources` field. Use `github.head_ref` on pull-request events and `github.ref_name` on push events so the release tracks the feature branch (rather than `github.ref`, which is `refs/pull/<n>/merge` on pull requests):
+
+```yml
+env:
+  OCTOPUS_API_KEY: ${{ secrets.API_KEY  }}
+  OCTOPUS_URL: ${{ secrets.OCTOPUS_URL }}
+  OCTOPUS_SPACE: 'Outer Space'
+steps:
+  # ...
+  - name: Create a release in Octopus Deploy 🐙
+    id: create_a_release_in_octopus_deploy
+    uses: OctopusDeploy/create-release-action@v4
+    with:
+      project: 'MyProject'
+      git_resources: |
+        Update Argo CD Application Manifests:refs/heads/${{ github.head_ref || github.ref_name }}
+```
+
+## ✍️ Environment Variables
+
+| Name              | Description                                                                                                                                          |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `OCTOPUS_URL`     | The base URL hosting Octopus Deploy (i.e. `https://octopus.example.com`). It is strongly recommended that this value retrieved from a GitHub secret. |
+| `OCTOPUS_API_KEY` | The API key used to access Octopus Deploy. It is strongly recommended that this value retrieved from a GitHub secret.                                |
+| `OCTOPUS_SPACE`   | The Name of a space within which this command will be executed.                                                                                      |
+
+## 📥 Inputs
+
+| Name                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|:---------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `project`            | **Required.** The name of the project associated with this release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `release_number`     | The number for the new release. If omitted, Octopus Deploy will generate a release number.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `channel`            | The name of the channel to use for the new release. If omitted, the best channel will be selected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `package_version`    | The version number of all packages to use for this release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `packages`           | A multi-line list of version numbers to use for a package in the release. Format: StepName:Version or PackageID:Version or StepName:PackageName:Version. StepName, PackageID, and PackageName can be replaced with an asterisk ("\*"). An asterisk will be assumed for StepName, PackageID, or PackageName if they are omitted. **NOTE** these values should not be enclosed in single-quotes (`'`)                                                                                                                                                                                        |
+| `git_resources`      | A multi-line list of Git references to use for a step's Git resource, resolved at release-creation time. Useful for steps that read from a Git repository — such as **Update Argo CD Application Manifests** — so a release can target a specific branch/tag (e.g. a feature branch). Format: StepName:GitRef or StepName:GitResourceName:GitRef (e.g. `Update Argo CD Application Manifests:refs/heads/my-feature`). Note: `git_ref`/`git_commit` select the version-controlled project's own OCL branch; `git_resources` selects the branch/tag of a Git resource used by a step.                                                                                                                                                                                        |
+| `git_ref`            | Git reference, _branch name or tag_, to the specific resources of a version controlled Octopus Project. This should be used for version controlled projects when OCL files are stored in a different repository or branch as the application being built. E.g. Use the `main` branch, regardless of the location of the repository where the application(s) are being built as they are different **or** `${{ github.ref }}` to use the branch or tag ref that triggered the workflow.                                                                                                     |
+| `git_commit`         | Git commit, _commit SHA-1 hash_, pointing to the specific resources of a version controlled Octopus Project. This should be used for version controlled projects when OCL files are stored in the same repository or branch as the application being built. E.g. `${{ github.sha }}` to use the commit that triggered the workflow.   |
+| `ignore_existing`    | Ignore existing releases if present in Octopus Deploy with the matching version number. Defaults to **false**                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `release_notes`      | The release notes text associated with the new release (Markdown is supported).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `release_notes_file` | A file containing the release notes associated with the new release (Markdown is supported). Use either `release_notes` or this input, supplying both is not supported.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `server`             | The instance URL hosting Octopus Deploy (i.e. "https://octopus.example.com/"). The instance URL is required, but you may also use the OCTOPUS_URL environment variable.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `api_key`            | The API key used to access Octopus Deploy. An API key is required, but you may also use the OCTOPUS_API_KEY environment variable. It is strongly recommended that this value retrieved from a GitHub secret.                                                                                                                                                                                                                                                                                                                                                                               |
+| `space`              | The name of a space within which this command will be executed. The space name is required, but you may also use the OCTOPUS_SPACE environment variable.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `custom_fields`      | A multi-line string of custom fields for the release. Format:<br/>customFieldName:customFieldValue<br/>customFieldName2:customFieldValue2                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+## 📤 Outputs
+
+| Name             | Description                                                                                                                     |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| `release_number` | The Octopus Deploy release number assigned to the Release. Use this if you wish to refer to the release later in your workflow. |
+
+## 🤝 Contributions
+
+Contributions are welcome! :heart: Please read our [Contributing Guide](.github/CONTRIBUTING.md) for information about how to get involved in this project.
 
 ## Privacy
 

@@ -1,0 +1,57 @@
+name: Test git_ref, git_commit and git_resources inputs are accepted and server is contacted
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Start mock Octopus server
+        run: |
+          rm -f /tmp/octopus-requests.log
+          nohup python3 "$GITHUB_WORKSPACE/tests/fixtures/mock-octopus.py" 18080 /tmp/octopus-requests.log > /tmp/mock.out 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -s -o /dev/null http://127.0.0.1:18080/ready; then break; fi
+            sleep 1
+          done
+          curl -s -o /dev/null http://127.0.0.1:18080/ready || { echo "mock server did not start"; cat /tmp/mock.out; exit 1; }
+          : > /tmp/octopus-requests.log
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          project: My CaC Project
+          git_ref: refs/heads/main
+          git_commit: 0123456789abcdef0123456789abcdef01234567
+          git_resources: |
+            Update Argo CD Application Manifests:refs/heads/my-feature
+            Deploy Step:Source Repo:refs/heads/main
+          server: http://127.0.0.1:18080
+          api_key: API-GITTESTKEY123
+          space: Default
+      - name: Assert inputs passed validation and server was contacted
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+          RELEASE: ${{ steps.action.outputs.release_number }}
+        run: |
+          echo "outcome: $OUTCOME"
+          echo "release_number: '$RELEASE'"
+          echo "--- requests received ---"
+          cat /tmp/octopus-requests.log
+          if [ "$OUTCOME" != "failure" ]; then
+            echo "FAIL: expected failure (mock server always returns 500)"
+            exit 1
+          fi
+          if [ -n "$RELEASE" ]; then
+            echo "FAIL: release_number output should be empty"
+            exit 1
+          fi
+          if ! grep -q '^REQUEST ' /tmp/octopus-requests.log; then
+            echo "FAIL: action never contacted the server (inputs rejected before network?)"
+            exit 1
+          fi
+          if ! grep -qi 'API-GITTESTKEY123' /tmp/octopus-requests.log; then
+            echo "FAIL: API key was not sent to the server"
+            exit 1
+          fi
+          echo "PASS"
