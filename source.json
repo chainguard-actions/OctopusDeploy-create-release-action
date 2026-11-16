@@ -4,8 +4,13 @@
   "version": "v4.2.5",
   "commit_sha": "2fceebb1d9cc8624d726a77e2faf93948de6741d",
   "url": "https://github.com/OctopusDeploy/create-release-action",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/OctopusDeploy/create-release-action/v4.2.5/sha256-b8b2d944161990d3d284b9e708c810959e3440fd5c0f02f2b8dfcb79812730b5.tar.gz",
+    "sha256": "b8b2d944161990d3d284b9e708c810959e3440fd5c0f02f2b8dfcb79812730b5",
+    "size_bytes": 434999
+  }
 }
